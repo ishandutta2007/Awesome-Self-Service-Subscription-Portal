@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360">
+  <defs>
+    <!-- Background linear gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#0d1527" />
+    </linearGradient>
+
+    <!-- Glowing accents -->
+    <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(30, 41, 59, 0.7)" />
+      <stop offset="100%" stop-color="rgba(15, 23, 42, 0.85)" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <!-- Grid pattern for futuristic tech background -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1" />
+    </pattern>
+
+    <filter id="blurFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" />
+    </filter>
+
+    <filter id="shadowFilter" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes floatCircle1 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.45; }
+      50% { transform: translate(40px, -25px) scale(1.15); opacity: 0.7; }
+    }
+    @keyframes floatCircle2 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+      50% { transform: translate(-35px, 30px) scale(1.1); opacity: 0.65; }
+    }
+    @keyframes pulseCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes dashMove {
+      to { stroke-dashoffset: -40; }
+    }
+    @keyframes shimmerBar {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(200%); }
+    }
+
+    .blob-1 { animation: floatCircle1 9s ease-in-out infinite; }
+    .blob-2 { animation: floatCircle2 11s ease-in-out infinite; }
+    .floating-card-1 { animation: pulseCard 6s ease-in-out infinite; }
+    .floating-card-2 { animation: pulseCard 7s ease-in-out infinite 1.5s; }
+    .data-flow {
+      stroke-dasharray: 8 6;
+      animation: dashMove 2.5s linear infinite;
+    }
+    .shimmer-line {
+      animation: shimmerBar 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .sub-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+    }
+    .badge-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1200" height="360" fill="url(#bgGrad)" rx="16" />
+  <rect width="1200" height="360" fill="url(#grid)" rx="16" />
+
+  <!-- Dynamic Glowing Orbs in Background -->
+  <g filter="url(#blurFilter)">
+    <circle class="blob-1" cx="220" cy="100" r="140" fill="#6366f1" />
+    <circle class="blob-2" cx="1020" cy="240" r="160" fill="#ec4899" />
+    <circle class="blob-1" cx="620" cy="310" r="120" fill="#06b6d4" />
+  </g>
+
+  <!-- Animated Data Flow Lines (Background) -->
+  <path class="data-flow" d="M 80 80 Q 300 20 500 120 T 900 100 T 1150 200" fill="none" stroke="rgba(99, 102, 241, 0.25)" stroke-width="2" />
+  <path class="data-flow" d="M 50 290 Q 350 330 650 260 T 1120 280" fill="none" stroke="rgba(236, 72, 153, 0.2)" stroke-width="2" />
+
+  <!-- Floating UI Decorative Card (Right side) -->
+  <g class="floating-card-1" transform="translate(860, 50)" filter="url(#shadowFilter)">
+    <rect width="280" height="150" rx="12" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    <!-- Header of card -->
+    <circle cx="25" cy="25" r="5" fill="#ef4444" />
+    <circle cx="40" cy="25" r="5" fill="#f59e0b" />
+    <circle cx="55" cy="25" r="5" fill="#10b981" />
+    <text x="80" y="29" fill="#94a3b8" class="badge-text">Billing Portal • Active Plan</text>
+    
+    <!-- Subscription Item -->
+    <rect x="20" y="50" width="240" height="40" rx="8" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(99, 102, 241, 0.3)" stroke-width="1" />
+    <rect x="30" y="60" width="20" height="20" rx="5" fill="url(#cyanGrad)" />
+    <text x="60" y="72" fill="#f8fafc" class="badge-text" font-size="12px">Enterprise Tier</text>
+    <text x="60" y="84" fill="#64748b" class="badge-text" font-size="10px">Auto-renews monthly</text>
+    <rect x="195" y="62" width="55" height="18" rx="4" fill="#10b981" fill-opacity="0.2" />
+    <text x="205" y="75" fill="#34d399" class="badge-text" font-size="10px">ACTIVE</text>
+
+    <!-- Self-service actions -->
+    <rect x="20" y="102" width="112" height="28" rx="6" fill="rgba(99, 102, 241, 0.2)" stroke="rgba(99, 102, 241, 0.5)" stroke-width="1" />
+    <text x="36" y="120" fill="#a5b4fc" class="badge-text" font-size="11px">Upgrade Plan</text>
+    <rect x="142" y="102" width="118" height="28" rx="6" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <text x="162" y="120" fill="#cbd5e1" class="badge-text" font-size="11px">Past Invoices</text>
+  </g>
+
+  <!-- Secondary Floating Card (Right lower side) -->
+  <g class="floating-card-2" transform="translate(790, 195)" filter="url(#shadowFilter)">
+    <rect width="240" height="110" rx="12" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.5" />
+    <text x="20" y="32" fill="#94a3b8" class="badge-text">Invoices &amp; Payment Methods</text>
+    <rect x="20" y="46" width="200" height="8" rx="4" fill="rgba(255, 255, 255, 0.08)" />
+    <rect x="20" y="46" width="140" height="8" rx="4" fill="url(#primaryGlow)" />
+    <text x="20" y="78" fill="#f1f5f9" class="badge-text" font-size="11px">💳 Visa ending in 4242</text>
+    <text x="20" y="94" fill="#64748b" class="badge-text" font-size="10px">Last invoice $599.00 • Paid</text>
+    <circle cx="210" cy="82" r="8" fill="#10b981" fill-opacity="0.2" />
+    <path d="M 207 82 L 209 84 L 214 79" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Left Main Content (Title, Subtitle, Badges) In High Contrast Foreground -->
+  <g transform="translate(70, 70)">
+    <!-- Pill tag -->
+    <rect x="0" y="0" width="260" height="30" rx="15" fill="rgba(99, 102, 241, 0.18)" stroke="rgba(129, 140, 248, 0.4)" stroke-width="1" />
+    <circle cx="16" cy="15" r="4" fill="#818cf8" />
+    <text x="28" y="19" fill="#c7d2fe" class="badge-text" font-size="11px" letter-spacing="0.5px">CURATED OPEN-SOURCE &amp; SAAS</text>
+
+    <!-- Main Title -->
+    <text x="0" y="85" fill="#ffffff" class="title-text" font-size="44">Awesome Self-Service</text>
+    <text x="0" y="135" fill="url(#primaryGlow)" class="title-text" font-size="44">Subscription Portal</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="178" fill="#cbd5e1" class="sub-text" font-size="16">
+      Complete Directory of Billing Portals, Hosted Account Management,
+    </text>
+    <text x="0" y="202" fill="#94a3b8" class="sub-text" font-size="15">
+      Customer Dunning Flows &amp; Open-Source Recurring Payment Tools
+    </text>
+
+    <!-- Feature Highlights / Tech Tags -->
+    <g transform="translate(0, 224)">
+      <rect x="0" y="0" width="130" height="26" rx="6" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.12)" />
+      <text x="12" y="17" fill="#e2e8f0" class="badge-text">⚡ Zero-Touch Billing</text>
+
+      <rect x="140" y="0" width="130" height="26" rx="6" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.12)" />
+      <text x="152" y="17" fill="#e2e8f0" class="badge-text">🔒 Self-Service RBAC</text>
+
+      <rect x="280" y="0" width="125" height="26" rx="6" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.12)" />
+      <text x="292" y="17" fill="#e2e8f0" class="badge-text">🚀 Metered &amp; Tiered</text>
+
+      <rect x="415" y="0" width="120" height="26" rx="6" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.12)" />
+      <text x="427" y="17" fill="#e2e8f0" class="badge-text">💳 Multi-Gateway</text>
+    </g>
+  </g>
+
+  <!-- Accent Bottom Border Gradient -->
+  <rect x="0" y="356" width="1200" height="4" fill="url(#primaryGlow)" rx="2" />
+</svg>
