@@ -59,6 +59,7 @@ Empower customers to manage their payment methods, billing tiers, metered invoic
   - [10. stapel-billing](#10-stapel-billing-)
 - [📊 Comparison at a Glance](#-comparison-at-a-glance)
 - [📈 Star History](#-star-history)
+- [💖 Support & Sponsor](#-support--sponsor)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
 
@@ -185,6 +186,29 @@ Self-hosted, community-driven Self-Service Subscription Portal tools, client por
 ## 📈 Star History
 
 [![Star History Chart](https://www.star-history.com/svg?repos=ishandutta2007/Awesome-Self-Service-Subscription-Portal&type=date&legend=top-left)](https://www.star-history.com/#ishandutta2007/Awesome-Self-Service-Subscription-Portal&type=date&legend=top-left)
+
+---
+
+## 💖 Support & Sponsor ☕
+
+Thank you for checking out and using this resource! If you find this curated collection useful for your products, infrastructure, or architecture decisions, please consider supporting the project:
+
+- 🌟 **Star the repository** to help others discover it!
+- 🍴 **Fork it** and keep it handy for your team's tooling and architecture planning.
+- 📢 **Share it** with friends, colleagues, and communities building SaaS or billing workflows.
+- ☕ **Buy me a coffee & sponsor ongoing maintenance:**
+
+<p align="center">
+  <a href="https://github.com/sponsors/ishandutta2007">
+    <img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-ea4aaa?style=for-the-badge&logo=github-sponsors" alt="Sponsor on GitHub Sponsors" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/sponsors/ishandutta2007">
+    <img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" />
+  </a>
+</p>
+
+Your support directly funds keeping these listings verified, testing open-source deployments, and continually researching modern billing tech! 🚀
 
 ---
 
