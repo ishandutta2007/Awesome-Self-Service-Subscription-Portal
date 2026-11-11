@@ -1,5 +1,3 @@
-# Awesome-Self-Service-Subscription-Portal
-
 # Awesome Self-Service Subscription Portal
 
 > A curated list of top Self-Service Subscription Portal platforms — both SaaS/Hosted commercial solutions and open-source alternatives for letting customers manage their own billing, subscriptions, and payment methods without support intervention.
@@ -10,11 +8,6 @@
 ## 📋 Table of Contents
 
 - [SaaS / Hosted Platforms](#-saas--hosted-platforms)
-  - [Chargebee Self-Serve Portal](#chargebee-self-serve-portal)
-  - [Stripe Customer Portal](#stripe-customer-portal)
-  - [Recurly Hosted Account Management](#recurly-hosted-account-management)
-  - [Lago Customer Portal](#lago-customer-portal)
-  - [UniBee User Portal](#unibee-user-portal)
 - [Open-Source Software](#-open-source-software)
   - [stapel-billing](#stapel-billing)
   - [Kill Bill Kaui](#kill-bill-kaui)
@@ -27,32 +20,15 @@
 
 ## 🟦 SaaS / Hosted Platforms
 
-Commercial, cloud-hosted Self-Service Subscription Portal platforms. These are not open-source but are included as reference points for feature comparison.
+Commercial, cloud-hosted Self-Service Subscription Portal platforms. These are not open-source but are included as reference points for feature comparison. Sorted in descending order by company size (valuation / revenue).
 
-### Chargebee Self-Serve Portal
-**Type:** Embeddable subscription management portal
-Chargebee's Self-Serve Portal lets customers manage their accounts and subscriptions without support intervention. Customers can view/edit account details, view/download invoices, view/edit subscription details, manage payment methods, edit billing/shipping addresses, and cancel/reactivate subscriptions [citation:2]. A key differentiator is that the portal can be **opened inside your app as a modal** rather than redirecting to a separate page, using Chargebee.js [citation:2][citation:8]. For teams wanting granular control, individual **widgets** (subscription details, payment methods, billing history, addresses, account info) can be embedded directly into the app layout via API-based integration [citation:2]. SSO is supported for authenticating users into the portal [citation:2].
-**Best for:** Teams wanting a customizable, embeddable portal that keeps customers within their application while offloading routine billing self-service.
-
-### Stripe Customer Portal
-**Type:** Hosted billing management portal
-Stripe's Customer Portal lets customers update billing information (including tax IDs), update payment methods, update subscriptions, cancel immediately or at period end, and view/download/pay invoices [citation:3]. It includes **cancellation deflection**—offering coupons when customers attempt to cancel—and localization to the customer's preferred language [citation:3]. Branding is customizable with icon, logo, colors, and business information [citation:3]. **Important limitations:** Customers cannot update subscriptions that use multiple products, metered billing, or unsupported payment methods; subscription schedules block updates; and only up to 10 products can be offered for plan changes [citation:3]. Portal sessions expire after 5 minutes (or 1 hour after activity) [citation:3].
-**Best for:** Stripe-native teams wanting a zero-development hosted portal with built-in retention features, accepting the platform's configuration constraints.
-
-### Recurly Hosted Account Management
-**Type:** White-labeled hosted subscription pages
-Recurly provides pre-built hosted pages or a fully custom experience via API, giving subscribers a consistent branded portal [citation:4][citation:10]. Customers can view account status, modify billing details, retrieve past invoices, change payment methods, cancel subscriptions, and redeem gift cards [citation:4]. Access is controlled via **unique secret tokens** with configurable access levels: **Account Login** (full portal with registration) or **Guest View Only** (limited details for hosted invoices) [citation:4][citation:10]. Online payments for manual invoices (credit card, PayPal, Amazon, ACH) are available on Professional/Elite plans, with an opt-in checkbox to use the selected method for future renewals [citation:4].
-**Best for:** Teams wanting white-labeled hosted pages with flexible access controls and token-based security, available on all Recurly plans.
-
-### Lago Customer Portal
-**Type:** Embeddable billing portal for open-source billing
-Lago provides a Customer Portal that shares billing information with end customers. It can be generated via API and displayed in your application using an iframe, with a URL pattern of `/customers/:external_customer_id/portal_url` [citation:5]. Lago is an open-source metering and usage-based billing platform, and the customer portal is a feature within that ecosystem [citation:11].
-**Best for:** Teams already using Lago for billing wanting a built-in customer portal rather than building one from scratch.
-
-### UniBee User Portal
-**Type:** Open-source billing user portal
-UniBee maintains a dedicated `unibee-user-portal` repository (TypeScript, AGPL-3.0) as the customer-facing portal for its open-source recurring billing system [citation:13]. The project is actively updated (last update January 2026) [citation:13]. This is part of the broader UniBee gateway-agnostic billing platform.
-**Best for:** Teams using UniBee for billing wanting its native user-facing portal component.
+| Platform | Company Size (Valuation / Revenue) | Pricing | Free Tier / Free Trial Limits | Embeddable / Hosted | Key Capabilities |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **[Stripe Customer Portal](https://stripe.com/billing)** | $91.5B valuation (tender offer, 2025); $5.1B+ revenue (2024) | Pay-as-you-go: 0.7% on recurring billing volume (custom plans available; optional custom domain at $10/month) | Free in Test Mode with full sandbox access; 0.7% pay-as-you-go fee on live billing volume with no monthly base subscription fee | Hosted only (supports custom domains) | Self-service billing/payment management, tax ID updates, invoice history download, cancellation deflection flows with automatic discounts/coupons |
+| **[Chargebee Self-Serve Portal](https://www.chargebee.com/)** | $3.5B valuation (Series H); $150M+ ARR | Starter Plan: $0/mo (up to $250k lifetime billing limit, then 0.75% overage); Performance Plan: $599/mo billed annually (up to $100k/mo billing, +0.75% overage) | Free forever on Starter Plan up to $250,000 in cumulative lifetime billing volume; free full-featured sandbox/test account | Both (in-app modal via Chargebee.js or modular embedded widgets) | In-app modal or granular widgets, account and plan switching, invoice download, payment method updates, SSO authentication |
+| **[Recurly Hosted Account Management](https://recurly.com/)** | ~$100M–$200M est. valuation (majority acquired by Accel-KKR; ~$20M+ ARR) | Starter Plan: $249/mo + 0.9% of billing volume; All-Access Plan: Custom quote (typically $1M+ annual volume minimum) | 90-day free trial on Starter Plan with up to $40,000/mo included billing volume; full sandbox developer testing | Hosted (white-labeled pages or API) | White-labeled branded pages, token-based authentication (Account Login vs. Guest View), past invoice retrieval, payment method changes, gift card redemption |
+| **[Lago Customer Portal](https://www.getlago.com/)** | $100M valuation ($22M total venture funding raised) | Open-Source Self-Hosted: $0/mo (AGPL-3.0); Lago Cloud / Premium: Custom quote based on event ingestion volume | Free forever self-hosted under AGPL-3.0 with complete core billing/metering engine; cloud proof-of-concept trial available via direct sales/demo request | Embeddable (iframe via `/customers/:id/portal_url`) | Embeddable iframe portal, real-time usage metering visibility, subscription management, automated invoice downloads, native API-generated access |
+| **[UniBee User Portal](https://unibee.dev/)** | Early-stage private / unfunded (~$2M–$5M est.) | Open-Source Self-Hosted: $0/mo (AGPL-3.0); Cloud Starter: $99/mo; Cloud Business: $399/mo | Free forever self-hosted under AGPL-3.0; Cloud Starter & Business tiers include a free trial upon signup with full core billing and analytics features | Dedicated open-source user portal (`unibee-user-portal` web app) | Gateway-agnostic customer portal, recurring subscription overview, invoice retrieval, multi-currency support, zero revenue-share percentage fees |
 
 ---
 
